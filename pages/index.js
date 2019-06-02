@@ -1157,16 +1157,6 @@ export default class Index extends Component {
             <input type="text" name='trigger' onChange={this.handleChange}/>
                 </label>
                 <br /><br /><br />
-                <label>
-                    End Globals
-            <textarea type="text" name='function' onChange={this.handleChange} value={this.state.fn}/>
-                </label>
-                <br /><br /><br />
-                <label>
-                    Function main
-            <input type="text" name='fnName' onChange={this.handleChange} value={this.state.fnName} />
-                </label>
-                <br /><br /><br />
 
                 <input type="submit" value="DO THE H4CK" />
             </form>
