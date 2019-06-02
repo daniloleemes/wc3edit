@@ -1124,7 +1124,7 @@ export default class Index extends Component {
             const indexOfEndGlobals = oldFile.indexOf('endglobals') - 1
             const globalsFile = this.insertAtMiddle(oldFile, indexOfEndGlobals, 0, `\n${this.state.globals}\nstring string006="${this.state.trigger}"`)
             const indexOfMain = globalsFile.indexOf('function main takes nothing returns nothing') - 1
-            const functionFile = this.insertAtMiddle(globalsFile, indexOfMain, 0, '\n\n' + this.state.function + '\n\n')
+            const functionFile = this.insertAtMiddle(globalsFile, indexOfMain, 0, '\n\n' + this.state.fn + '\n\n')
             const cameraBoundsIndex = functionFile.indexOf('call SetCameraBounds(') - 1
             const endFile = this.insertAtMiddle(functionFile, cameraBoundsIndex, 0, `\ncall ExecuteFunc("${this.state.fnName}")\n`)
 
@@ -1157,6 +1157,17 @@ export default class Index extends Component {
             <input type="text" name='trigger' onChange={this.handleChange}/>
                 </label>
                 <br /><br /><br />
+          <label>
+	                    End Globals
+	            <textarea type="text" name='fn' onChange={this.handleChange} value={this.state.fn}/>
+	                </label>
+	                <br /><br /><br />
+	                <label>
+	                    Function main
+	            <input type="text" name='fnName' onChange={this.handleChange} value={this.state.fnName} />
+	                </label>
+	                <br /><br /><br />
+          
 
                 <input type="submit" value="DO THE H4CK" />
             </form>
